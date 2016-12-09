@@ -21,6 +21,7 @@ function keypress(x) {
 }
 
 function mousepress(x) {
+  document.querySelector('.container').innerHTML = "x.target"
   console.log(x.target)
   const audio = document.querySelector(`audio[data-key="${x.keyCode}"]`) 
   const key = document.querySelector(`.key[data-key="${x.keyCode}"]`) 
@@ -28,7 +29,7 @@ function mousepress(x) {
 }
 
 function touchpress(x) {
-  alert(x)
+  document.querySelector('.container').innerHTML = x
   console.log(x.target)
   const audio = document.querySelector(`audio[data-key="${x.keyCode}"]`) 
   const key = document.querySelector(`.key[data-key="${x.keyCode}"]`) 
