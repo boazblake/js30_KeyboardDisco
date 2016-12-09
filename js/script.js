@@ -28,6 +28,7 @@ function mousepress(x) {
 }
 
 function touchpress(x) {
+  alert(x)
   console.log(x.target)
   const audio = document.querySelector(`audio[data-key="${x.keyCode}"]`) 
   const key = document.querySelector(`.key[data-key="${x.keyCode}"]`) 
