@@ -1,3 +1,4 @@
+const keys = document.querySelectorAll('.key')
 
 function addAction(x) {
   const audio = document.querySelector(`audio[data-key="${x.keyCode}"]`) 
@@ -5,12 +6,10 @@ function addAction(x) {
   if (audio) {audio.play(audio.currentTime = 0) && key.classList.add('playing')}
 }
 
-window.addEventListener('touchstart', addAction)
-const keys = document.querySelectorAll('.key')
-
 function removeAction(e){
-if (e.propertyName === 'transform') {this.classList.remove('playing')}
+  if (e.propertyName === 'transform') {this.classList.remove('playing')}
 }
 
-keys.forEach( x => x.addEventListener('touchend', removeAction))
+window.addEventListener('keydown', addAction)
 
+keys.forEach( x => x.addEventListener('transitionend', removeAction))
