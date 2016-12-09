@@ -5,12 +5,12 @@ function addAction(x) {
   if (audio) {audio.play(audio.currentTime = 0) && key.classList.add('playing')}
 }
 
-window.addEventListener('keydown', addAction)
+window.addEventListener('touchstart', addAction)
 const keys = document.querySelectorAll('.key')
 
 function removeAction(e){
 if (e.propertyName === 'transform') {this.classList.remove('playing')}
 }
 
-keys.forEach( x => x.addEventListener('transitionend', removeAction))
+keys.forEach( x => x.addEventListener('touchend', removeAction))
 
